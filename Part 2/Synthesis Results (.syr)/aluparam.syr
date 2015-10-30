@@ -1,0 +1,347 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 1.00 secs
+Total CPU time to Xst completion: 0.15 secs
+ 
+--> Reading design: aluparam.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "aluparam.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "aluparam"
+Output Format                      : NGC
+Target Device                      : xc6slx16-3-csg324
+
+---- Source Options
+Top Module Name                    : aluparam
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "C:\Users\Joseph\Documents\Xilinx\HW2\muxparam.v" into library work
+Parsing module <muxparam>.
+Parsing verilog file "CLOG2.v" included at line 30.
+WARNING:HDLCompiler:991 - "C:\Users\Joseph\Documents\Xilinx\HW2\muxparam.v" Line 50: Event expressions must result in a singular type
+Analyzing Verilog file "C:\Users\Joseph\Documents\Xilinx\HW2\fulladder1bit.v" into library work
+Parsing module <fulladder1bit>.
+Analyzing Verilog file "C:\Users\Joseph\Documents\Xilinx\HW2\aluparam.v" into library work
+Parsing module <aluparam>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <aluparam>.
+
+Elaborating module <muxparam(WIDTH=2,BITSIZE=1)>.
+
+Elaborating module <fulladder1bit>.
+
+Elaborating module <muxparam(WIDTH=4,BITSIZE=1)>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <aluparam>.
+    Related source file is "C:\Users\Joseph\Documents\Xilinx\HW2\aluparam.v".
+        BITSIZE = 16
+    Summary:
+Unit <aluparam> synthesized.
+
+Synthesizing Unit <muxparam_1>.
+    Related source file is "C:\Users\Joseph\Documents\Xilinx\HW2\muxparam.v".
+        WIDTH = 2
+        BITSIZE = 1
+    Summary:
+	inferred   1 Multiplexer(s).
+Unit <muxparam_1> synthesized.
+
+Synthesizing Unit <fulladder1bit>.
+    Related source file is "C:\Users\Joseph\Documents\Xilinx\HW2\fulladder1bit.v".
+    Summary:
+Unit <fulladder1bit> synthesized.
+
+Synthesizing Unit <muxparam_2>.
+    Related source file is "C:\Users\Joseph\Documents\Xilinx\HW2\muxparam.v".
+        WIDTH = 4
+        BITSIZE = 1
+    Summary:
+	inferred   3 Multiplexer(s).
+Unit <muxparam_2> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multiplexers                                         : 80
+ 1-bit 2-to-1 multiplexer                              : 80
+# Xors                                                 : 33
+ 1-bit xor2                                            : 33
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multiplexers                                         : 48
+ 1-bit 2-to-1 multiplexer                              : 48
+# Xors                                                 : 33
+ 1-bit xor2                                            : 33
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <aluparam> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block aluparam, actual ratio is 0.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Found no macro
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : aluparam.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 53
+#      GND                         : 1
+#      LUT2                        : 14
+#      LUT4                        : 1
+#      LUT5                        : 18
+#      LUT6                        : 19
+# IO Buffers                       : 68
+#      IBUF                        : 36
+#      OBUF                        : 32
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-3 
+
+
+Slice Logic Utilization: 
+ Number of Slice LUTs:                   52  out of   9112     0%  
+    Number used as Logic:                52  out of   9112     0%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:     52
+   Number with an unused Flip Flop:      52  out of     52   100%  
+   Number with an unused LUT:             0  out of     52     0%  
+   Number of fully used LUT-FF pairs:     0  out of     52     0%  
+   Number of unique control sets:         0
+
+IO Utilization: 
+ Number of IOs:                          68
+ Number of bonded IOBs:                  68  out of    232    29%  
+
+Specific Feature Utilization:
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+No clock signals found in this design
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -3
+
+   Minimum period: No path found
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: No path found
+   Maximum combinational path delay: 23.014ns
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default path analysis
+  Total number of paths / destination ports: 2046 / 21
+-------------------------------------------------------------------------
+Delay:               23.014ns (Levels of Logic = 19)
+  Source:            sel<1> (PAD)
+  Destination:       flags<2> (PAD)
+
+  Data Path: sel<1> to flags<2>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            19   1.222   1.436  sel_1_IBUF (sel_1_IBUF)
+     LUT6:I0->O            2   0.203   0.864  GEN_CARRY_MUX[1].carry_mux/Mmux_pin<0><0>11 (Cin<1>)
+     LUT6:I2->O            2   0.203   0.845  GEN_CARRY_MUX[2].carry_mux/Mmux_pin<0><0>1 (Cin<2>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[3].carry_mux/Mmux_pin<0><0>1 (Cin<3>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[4].carry_mux/Mmux_pin<0><0>1 (Cin<4>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[5].carry_mux/Mmux_pin<0><0>1 (Cin<5>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[6].carry_mux/Mmux_pin<0><0>1 (Cin<6>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[7].carry_mux/Mmux_pin<0><0>1 (Cin<7>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[8].carry_mux/Mmux_pin<0><0>1 (Cin<8>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[9].carry_mux/Mmux_pin<0><0>1 (Cin<9>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[10].carry_mux/Mmux_pin<0><0>1 (Cin<10>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[11].carry_mux/Mmux_pin<0><0>1 (Cin<11>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[12].carry_mux/Mmux_pin<0><0>1 (Cin<12>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[13].carry_mux/Mmux_pin<0><0>1 (Cin<13>)
+     LUT6:I3->O            2   0.205   0.845  GEN_CARRY_MUX[14].carry_mux/Mmux_pin<0><0>1 (Cin<14>)
+     LUT6:I3->O            3   0.205   0.879  GEN_CARRY_MUX[15].carry_mux/Mmux_pin<0><0>1 (Cin<15>)
+     LUT4:I1->O            3   0.205   0.995  GEN_FULL_ADDERS[15].full_adders/n00061 (GEN_FULL_ADDERS[15].full_adders/n0006)
+     LUT5:I0->O            1   0.203   0.579  out3 (flags_2_OBUF)
+     OBUF:I->O                 2.571          flags_2_OBUF (flags<2>)
+    ----------------------------------------
+    Total                     23.014ns (7.272ns logic, 15.742ns route)
+                                       (31.6% logic, 68.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 7.00 secs
+Total CPU time to Xst completion: 6.10 secs
+ 
+--> 
+
+Total memory usage is 262248 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    1 (   0 filtered)
+Number of infos    :    0 (   0 filtered)
+

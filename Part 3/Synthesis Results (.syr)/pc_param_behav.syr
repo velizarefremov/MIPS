@@ -1,0 +1,451 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.08 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.09 secs
+ 
+--> Reading design: pc_param_behav.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "pc_param_behav.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "pc_param_behav"
+Output Format                      : NGC
+Target Device                      : xc6slx16-2-csg324
+
+---- Source Options
+Top Module Name                    : pc_param_behav
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Analyzing Verilog file "D:\Projects\Xilinx\ProgramCounter\signex_param.v" into library work
+Parsing module <signex_param>.
+Analyzing Verilog file "D:\Projects\Xilinx\ProgramCounter\signed_adder_param.v" into library work
+Parsing module <signed_adder_param>.
+Analyzing Verilog file "D:\Projects\Xilinx\ProgramCounter\regparam.v" into library work
+Parsing module <regparam>.
+Analyzing Verilog file "D:\Projects\Xilinx\ProgramCounter\regfileparam_behav.v" into library work
+Parsing module <regfileparam_behav>.
+Analyzing Verilog file "D:\Projects\Xilinx\ProgramCounter\pc_param_behav.v" into library work
+Parsing module <pc_param_behav>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating module <pc_param_behav>.
+
+Elaborating module <regparam(SIZE=16)>.
+
+Elaborating module <regfileparam_behav(BITSIZE=16,ADDSIZE=4)>.
+
+Elaborating module <signed_adder_param(WIDTH=16)>.
+
+Elaborating module <signex_param(EXTSIZE=16,CURSIZE=8,MODE=0)>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <pc_param_behav>.
+    Related source file is "D:\Projects\Xilinx\ProgramCounter\pc_param_behav.v".
+        WIDTH = 16
+        ADDSIZE = 4
+        JMPSIZE = 8
+INFO:Xst:3210 - "D:\Projects\Xilinx\ProgramCounter\pc_param_behav.v" line 68: Output port <bdat> of the instance <regfile> is unconnected or connected to loadless signal.
+    Summary:
+	inferred   2 Multiplexer(s).
+Unit <pc_param_behav> synthesized.
+
+Synthesizing Unit <regparam>.
+    Related source file is "D:\Projects\Xilinx\ProgramCounter\regparam.v".
+        SIZE = 16
+    Found 16-bit register for signal <Q>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+Unit <regparam> synthesized.
+
+Synthesizing Unit <regfileparam_behav>.
+    Related source file is "D:\Projects\Xilinx\ProgramCounter\regfileparam_behav.v".
+        BITSIZE = 16
+        ADDSIZE = 4
+    Found 256-bit register for signal <n0028[255:0]>.
+    Found 16-bit 16-to-1 multiplexer for signal <adat> created at line 49.
+    Summary:
+	inferred 256 D-type flip-flop(s).
+	inferred  17 Multiplexer(s).
+Unit <regfileparam_behav> synthesized.
+
+Synthesizing Unit <signed_adder_param>.
+    Related source file is "D:\Projects\Xilinx\ProgramCounter\signed_adder_param.v".
+        WIDTH = 16
+    Found 16-bit adder for signal <Sum> created at line 28.
+    Summary:
+	inferred   1 Adder/Subtractor(s).
+Unit <signed_adder_param> synthesized.
+
+Synthesizing Unit <signex_param>.
+    Related source file is "D:\Projects\Xilinx\ProgramCounter\signex_param.v".
+        EXTSIZE = 16
+        CURSIZE = 8
+        MODE = 0
+    Summary:
+	no macro.
+Unit <signex_param> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Registers                                            : 2
+ 16-bit register                                       : 1
+ 256-bit register                                      : 1
+# Multiplexers                                         : 19
+ 16-bit 16-to-1 multiplexer                            : 1
+ 16-bit 2-to-1 multiplexer                             : 18
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 1
+ 16-bit adder                                          : 1
+# Registers                                            : 272
+ Flip-Flops                                            : 272
+# Multiplexers                                         : 259
+ 1-bit 16-to-1 multiplexer                             : 16
+ 1-bit 2-to-1 multiplexer                              : 240
+ 16-bit 2-to-1 multiplexer                             : 3
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <pc_param_behav> ...
+
+Optimizing unit <regfileparam_behav> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block pc_param_behav, actual ratio is 6.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 272
+ Flip-Flops                                            : 272
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : pc_param_behav.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 432
+#      GND                         : 1
+#      INV                         : 1
+#      LUT3                        : 31
+#      LUT5                        : 1
+#      LUT6                        : 320
+#      MUXCY                       : 15
+#      MUXF7                       : 32
+#      MUXF8                       : 15
+#      XORCY                       : 16
+# FlipFlops/Latches                : 272
+#      FDCE                        : 272
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 37
+#      IBUF                        : 21
+#      OBUF                        : 16
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx16csg324-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             272  out of  18224     1%  
+ Number of Slice LUTs:                  353  out of   9112     3%  
+    Number used as Logic:               353  out of   9112     3%  
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    353
+   Number with an unused Flip Flop:      81  out of    353    22%  
+   Number with an unused LUT:             0  out of    353     0%  
+   Number of fully used LUT-FF pairs:   272  out of    353    77%  
+   Number of unique control sets:         2
+
+IO Utilization: 
+ Number of IOs:                          38
+ Number of bonded IOBs:                  38  out of    232    16%  
+
+Specific Feature Utilization:
+ Number of BUFG/BUFGCTRLs:                1  out of     16     6%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 272   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 3.788ns (Maximum Frequency: 263.957MHz)
+   Minimum input arrival time before clock: 5.408ns
+   Maximum output required time after clock: 4.162ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 3.788ns (frequency: 263.957MHz)
+  Total number of paths / destination ports: 4864 / 272
+-------------------------------------------------------------------------
+Delay:               3.788ns (Levels of Logic = 18)
+  Source:            inst_reg/Q_0 (FF)
+  Destination:       inst_reg/Q_15 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: inst_reg/Q_0 to inst_reg/Q_15
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.525   0.726  inst_reg/Q_0 (inst_reg/Q_0)
+     LUT3:I2->O            1   0.254   0.000  pc_adder/Madd_Sum_lut<0> (pc_adder/Madd_Sum_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  pc_adder/Madd_Sum_cy<0> (pc_adder/Madd_Sum_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<1> (pc_adder/Madd_Sum_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<2> (pc_adder/Madd_Sum_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<3> (pc_adder/Madd_Sum_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<4> (pc_adder/Madd_Sum_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<5> (pc_adder/Madd_Sum_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<6> (pc_adder/Madd_Sum_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<7> (pc_adder/Madd_Sum_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<8> (pc_adder/Madd_Sum_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<9> (pc_adder/Madd_Sum_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<10> (pc_adder/Madd_Sum_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<11> (pc_adder/Madd_Sum_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<12> (pc_adder/Madd_Sum_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  pc_adder/Madd_Sum_cy<13> (pc_adder/Madd_Sum_cy<13>)
+     MUXCY:CI->O           0   0.023   0.000  pc_adder/Madd_Sum_cy<14> (pc_adder/Madd_Sum_cy<14>)
+     XORCY:CI->O          17   0.206   1.209  pc_adder/Madd_Sum_xor<15> (sum<15>)
+     LUT6:I5->O            1   0.254   0.000  regfile/mux23011 (regfile/array_reg[1][15]_wdat[15]_mux_15_OUT<15>)
+     FDCE:D                    0.074          regfile/array_reg_0_31
+    ----------------------------------------
+    Total                      3.788ns (1.853ns logic, 1.935ns route)
+                                       (48.9% logic, 51.1% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 6384 / 816
+-------------------------------------------------------------------------
+Offset:              5.408ns (Levels of Logic = 5)
+  Source:            ra<1> (PAD)
+  Destination:       inst_reg/Q_1 (FF)
+  Destination Clock: clk rising
+
+  Data Path: ra<1> to inst_reg/Q_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O            64   1.328   2.385  ra_1_IBUF (ra_1_IBUF)
+     LUT6:I0->O            1   0.254   0.000  regfile/mux241_4 (regfile/mux241_4)
+     MUXF7:I1->O           1   0.175   0.000  regfile/mux241_3_f7 (regfile/mux241_3_f7)
+     MUXF8:I1->O           1   0.152   0.790  regfile/mux241_2_f8 (adat<10>)
+     LUT3:I1->O            1   0.250   0.000  Mmux_pc_in21 (pc_in<10>)
+     FDCE:D                    0.074          inst_reg/Q_10
+    ----------------------------------------
+    Total                      5.408ns (2.233ns logic, 3.175ns route)
+                                       (41.3% logic, 58.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 16 / 16
+-------------------------------------------------------------------------
+Offset:              4.162ns (Levels of Logic = 1)
+  Source:            inst_reg/Q_15 (FF)
+  Destination:       PC_cont<15> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: inst_reg/Q_15 to PC_cont<15>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDCE:C->Q             2   0.525   0.725  inst_reg/Q_15 (inst_reg/Q_15)
+     OBUF:I->O                 2.912          PC_cont_15_OBUF (PC_cont<15>)
+    ----------------------------------------
+    Total                      4.162ns (3.437ns logic, 0.725ns route)
+                                       (82.6% logic, 17.4% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock clk
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+clk            |    3.788|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 6.00 secs
+Total CPU time to Xst completion: 6.34 secs
+ 
+--> 
+
+Total memory usage is 262976 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    1 (   0 filtered)
+
